@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+    color: #333333;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4em;
+
+    #nav-icon {
+        color: #4A5F57;
+        font-size: 24px;
+        margin: 20px;
+    }
+
+    #logo {
+        height: 35px;   
+    }
+}
+
+header {
+    display: flex;
+    background-color: #4A5F57;
+    padding: 1.5rem;
+
+    .col1 {
+        flex: 0 0 65%;
+        color: #ffffff;
+
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0;
+            color: #F4CE15;
+        }
+
+        h3 {
+            font-family: 'Times New Roman', Times, serif;
+        }
+    }
+
+    .col2 {
+        display: flex;
+        flex: 0 0 35%;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+
+        img {
+            display: flex;
+            object-fit: cover;
+            border-radius: 20px;
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    input {
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: #F4CE15;
+        color: #4A5F57;
+        font-weight: bolder;
+    }
+}
+
+main {
+    filter {
+        display: flex;
+
+        pill {
+            margin: 10px 5px;
+        }
+    }
+}
+
+pill {
+    background-color: #e6e6e6;
+    color: #333333;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: inline-block;
+}
+
+item {
+    display: flex;
+    margin: 10px;
+
+    .col1 {
+        flex: 0 0 65%;
+    }
+
+    .col2 {
+        display: flex;
+        flex: 0 0 35%;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+
+        img {
+            display: flex;
+            object-fit: cover;
+            border-radius: 20px;
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
