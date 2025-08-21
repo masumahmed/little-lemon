@@ -1,4 +1,4 @@
-import pasta from '../assets/img/pasta.jpg';
+import menu from './menu.json';
 
 function Pills({ text }) {
     return <>
@@ -8,9 +8,9 @@ function Pills({ text }) {
 
 function MenuItem({ title, description, price, img }) {
     return <>
-        <item>
+        <item className="menu-item">
             <div className="col1">
-                <h3>{title}</h3>
+                <b>{title}</b>
                 <p>{description}</p>
                 <b>{price}</b>
             </div>
@@ -21,39 +21,28 @@ function MenuItem({ title, description, price, img }) {
     </>
 }
 
-let data = [
-    {
-        "title": "Pasta",
-        "description": "Pasta with a rich tomato sauce and fresh basil.",
-        "price": "$12.99",
-        "img": "../assets/img/pasta.jpg"
-    }
-]
-
 function Main() {
     return <>
         <main>
             <filter>
-                <Pills text="Mediterranean" />
-                <Pills text="Mediterranean" />
-                <Pills text="Mediterranean" />
+                <Pills text="Lunch" />
+                <Pills text="Main" />
+                <Pills text="Dessert" />
+                <Pills text="Specials" />
+                <Pills text="Sides" />
+                <Pills text="Beverages" />
             </filter>
 
-            <MenuItem
-                title="Pasta"
-                description="Pasta with a rich tomato sauce and fresh basil."
-                price="$12.99"
-                img={pasta}
-            />
+            {menu.map((item, index) => (<>
+                <MenuItem
+                    key={index}
+                    title={item.title}
+                    description={item.description}
+                    price={item.price}
+                    img={item.img}
+                />
+            </>))}
 
-            <hr />
-
-            <MenuItem
-                title="Pasta"
-                description="Pasta with a rich tomato sauce and fresh basil."
-                price="$12.99"
-                img={pasta}
-            />
         </main>
     </>
 }

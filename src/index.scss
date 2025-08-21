@@ -63,7 +63,7 @@ header {
         img {
             display: flex;
             object-fit: cover;
-            border-radius: 20px;
+            border-radius: 10px;
             width: 100px;
             height: 100px;
         }
@@ -76,12 +76,20 @@ header {
         background-color: #F4CE15;
         color: #4A5F57;
         font-weight: bolder;
+
+        &:hover {
+            filter: brightness(75%);
+            transition: 0.3s;
+        }
     }
 }
 
 main {
     filter {
         display: flex;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        border-bottom: 1px solid #dbdbdb;
 
         pill {
             margin: 10px 5px;
@@ -99,9 +107,33 @@ pill {
     display: inline-block;
 }
 
-item {
+.menu-item {
     display: flex;
-    margin: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #dbdbdb;
+
+    p {
+        margin: 10px auto;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-height: 1.5;
+    }
+
+    hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #dbdbdb;
+        margin: 0;
+        padding: 0;
+
+        &:last-child {
+            display: none;
+        }
+    }
 
     .col1 {
         flex: 0 0 65%;
@@ -117,9 +149,20 @@ item {
         img {
             display: flex;
             object-fit: cover;
-            border-radius: 20px;
+            border-radius: 10px;
             width: 100px;
             height: 100px;
         }
+    }
+}
+
+footer {
+    background-color: #4A5F57;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+
+    p {
+        margin: 0;
     }
 }

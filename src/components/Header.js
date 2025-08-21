@@ -1,4 +1,4 @@
-import pasta from '../assets/img/pasta.jpg';
+import chef from '../assets/img/head_chef.jpg';
 
 function Header() {
     return <>
@@ -11,7 +11,7 @@ function Header() {
                 <input type="button" value="Reserve a Table" />
             </div>
             <div className="col2">
-                <img src={pasta} alt="Little Lemon" />
+                <img src={chef} alt="Little Lemon" />
             </div>
         </header>
     </>
