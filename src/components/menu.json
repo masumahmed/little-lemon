@@ -9,7 +9,7 @@
         "title": "Bruschetta",
         "description": "Grilled bread topped with a garlic rub, fresh tomatoes, basil, and extra virgin olive oil.",
         "price": "$7.99",
-        "img": "./assets/img/restaurant food B.jpg"
+        "img": "./assets/img/menu_items/Bruschetta.jpg"
     },
     {
         "title": "Pasta",
