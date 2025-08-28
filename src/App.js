@@ -1,10 +1,10 @@
+import Home from './Home';
+import Booking from './Booking';
+import MenuItem from './MenuItem';
+import Cart from './Cart';
+
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
-import Home from './Home';
-import Reserve from './Reserve';
-import Product from './Product';
-import Cart from './Cart';
 
 function App() {
     const [cart, setCart] = useState([]);
@@ -28,9 +28,9 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/reserve" element={<Reserve />} />
+                <Route path="/reserve" element={<Booking />} />
                 <Route path="/cart" element={<Cart />} />
-                <Route path="/menu/:menuItem" element={<Product addToCart={addToCart} />} />
+                <Route path="/menu/:menuItem" element={<MenuItem cart={cart} addToCart={addToCart} />} />
             </Routes>
         </BrowserRouter>
     </>

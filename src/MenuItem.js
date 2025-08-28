@@ -1,11 +1,12 @@
 import Footer from './components/Footer';
 import Nav from './components/Nav';
 import Counter from './components/Counter';
-import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import menuJson from './components/menu.json'; // Assuming you have a menu.json file with your menu items
 
-function Product({ addToCart }) {
+import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+
+function MenuItem({ cart, addToCart }) {
     let { menuItem } = useParams();
     let [count, setCount] = useState(1);
 
@@ -17,18 +18,17 @@ function Product({ addToCart }) {
         setMenuData(item);
     }, [menuItem]);
 
-    useEffect(() => {
-        console.log(count);
-    }, [count]);
-
     const handleClick = () => {
-        // create cart if it doesn't exist
         const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
-        localStorage.setItem("cart", JSON.stringify([...existingCart, { ...menuData, quantity: count }]));
+        const itemIndex = existingCart.findIndex(item => item.id === menuData.id);
 
-        if (menuData) {
-            addToCart(menuData, count);
+        if (itemIndex > -1) {
+            existingCart[itemIndex].quantity += count;
+        } else {
+            existingCart.push({ ...menuData, quantity: count });
         }
+
+        localStorage.setItem("cart", JSON.stringify(existingCart));
     };
 
     return <>
@@ -50,4 +50,4 @@ function Product({ addToCart }) {
     </>
 }
 
-export default Product;
+export default MenuItem;

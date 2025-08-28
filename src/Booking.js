@@ -1,18 +1,27 @@
 import Nav from './components/Nav';
 import Calendar from './components/Calendar';
-import Footer from './components/Footer';
 import Counter from './components/Counter';
-import { useState } from 'react';
+import Footer from './components/Footer';
 
-function Reserve() {
-    // form data
+import { useEffect, useState } from 'react';
+
+function Booking() {
+    let [guests, setGuests] = useState(1);
+
     const [formData, setFormData] = useState({
         date: '',
         time: '',
         name: '',
         phone: '',
-        guests: 1
+        guests: guests
     });
+
+    useEffect(() => {
+        setFormData((prevData) => ({
+            ...prevData,
+            guests: guests
+        }));
+    }, [guests]);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -24,14 +33,26 @@ function Reserve() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(formData);
-    };
-
-    const handleGuestChange = (newGuestCount) => {
-        setFormData((prevData) => ({
-            ...prevData,
-            guests: newGuestCount
-        }));
+        if (formData.date && formData.time && formData.name && formData.phone && formData.guests) {
+            alert("Reservation made!");
+            window.history.back();
+            console.log(formData);
+        }
+        else if (!formData.date) {
+            alert("Please select a date.");
+        }
+        else if (!formData.time) {
+            alert("Please select a time.");
+        }
+        else if (!formData.name) {
+            alert("Please enter your name.");
+        }
+        else if (!formData.phone) {
+            alert("Please enter your phone number.");
+        }
+        else if (!formData.guests) {
+            alert("Please select the number of guests.");
+        }
     };
 
     return <>
@@ -47,7 +68,7 @@ function Reserve() {
                 <br />
 
                 <label htmlFor="date">SELECT A TIME</label>
-                <input className="input" value={formData.time} onChange={handleChange} type="time" id="time" name="time" placeholder='TIME' required />
+                <input className="input" value={formData.time} onChange={handleChange} step="900" min="10:00" max="22:00" type="time" id="time" name="time" placeholder='TIME' required />
                 <br />
 
                 <label htmlFor="name">NAME</label>
@@ -55,11 +76,11 @@ function Reserve() {
                 <br />
 
                 <label htmlFor="phone">PHONE NUMBER</label>
-                <input className="input" type="text" id="phone" name="phone" required />
+                <input className="input" type="number " id="phone" name="phone" required />
                 <br />
 
                 <label htmlFor="guests">NUMBER OF GUESTS</label>
-                <Counter />
+                <Counter count={guests} setCount={setGuests} />
                 <br />
 
                 <button className="button" type="submit">Reserve</button>
@@ -69,4 +90,4 @@ function Reserve() {
     </>
 }
 
-export default Reserve;
+export default Booking;

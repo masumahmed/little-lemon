@@ -206,6 +206,7 @@ reserve {
 }
 
 .css-5c1adp-MuiContainer-root {
+    border-color: black !important;
     padding: 0 !important;
 }
 
@@ -242,9 +243,38 @@ reserve {
 cart {
     display: flex;
     flex-direction: column;
+    padding: 10px;
+    min-height: calc(100vh - 64px - 70px - 20px);
+
+    img {
+        max-height: 100px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 1px solid #dbdbdb;
+    }
 
     a {
         text-decoration: none;
         color: inherit;
+    }
+
+    span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    button {
+        padding: 9px 10px;
+    }
+
+    .cart-item {
+        padding: 10px 0;
+        border-bottom: 1px solid #dbdbdb;
+
+        &:last-child {
+            border-bottom: none;
+        }
     }
 }
