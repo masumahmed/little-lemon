@@ -83,7 +83,7 @@ function Booking() {
                 <Counter count={guests} setCount={setGuests} />
                 <br />
 
-                <button className="button" type="submit">Reserve</button>
+                <input className="button" type="submit" value="Reserve" />
             </form>
         </div>
         <Footer />
