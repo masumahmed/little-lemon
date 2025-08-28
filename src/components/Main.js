@@ -7,13 +7,13 @@ function Pills({ text }) {
     };
 
     return <>
-        <pill onClick={handleEvent} >{text}</pill>
+        <div className='pill' onClick={handleEvent} >{text}</div>
     </>
 }
 
 function MenuItem({ title, description, price, img }) {
     return <>
-        <item className="menu-item">
+        <div className="menu-item">
             <div className="col1">
                 <b>{title}</b>
                 <p>{description}</p>
@@ -22,21 +22,20 @@ function MenuItem({ title, description, price, img }) {
             <div className="col2">
                 <img src={img} alt={title} />
             </div>
-        </item>
+        </div>
     </>
 }
 
 function Main() {
+    const filterItems = ["lunch", "main", "dessert", "specials", "sides", "beverages"];
+
     return <>
         <main>
-            <filter>
-                <Pills text="Lunch" />
-                <Pills text="Main" />
-                <Pills text="Dessert" />
-                <Pills text="Specials" />
-                <Pills text="Sides" />
-                <Pills text="Beverages" />
-            </filter>
+            <div className='filter'>
+                {filterItems.map(item => (
+                    <Pills key={item} text={item.charAt(0).toUpperCase() + item.slice(1)} />
+                ))}
+            </div>
 
             {menu.map((item, index) => (<>
                 <Link to={`/menu/${item.id}`} key={index}>

@@ -7,11 +7,9 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 function MenuItem({ cart, addToCart }) {
+    const [menuData, setMenuData] = useState(null);
     let { menuItem } = useParams();
     let [count, setCount] = useState(1);
-
-    // get json data from data.json for menu item
-    const [menuData, setMenuData] = useState(null);
 
     useEffect(() => {
         const item = menuJson.find(item => item.id === menuItem);
@@ -22,24 +20,22 @@ function MenuItem({ cart, addToCart }) {
         const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
         const itemIndex = existingCart.findIndex(item => item.id === menuData.id);
 
-        if (itemIndex > -1) {
+        if (itemIndex > -1)
             existingCart[itemIndex].quantity += count;
-        } else {
+        else
             existingCart.push({ ...menuData, quantity: count });
-        }
 
         localStorage.setItem("cart", JSON.stringify(existingCart));
     };
 
     return <>
         <Nav />
-
         <div className='product-container'>
             <img src={menuData?.img.substring(1)} alt={menuData?.title} />
             <div className="product-details">
                 <h2>{menuData?.title}</h2>
                 <p>{menuData?.description}</p>
-                <b>Price: ${menuData?.price}</b>
+                <b>Price: {menuData?.price}</b>
                 <br />
                 <Counter count={count} setCount={setCount} />
                 <br />

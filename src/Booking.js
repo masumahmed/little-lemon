@@ -34,7 +34,7 @@ function Booking() {
     const handleSubmit = (event) => {
         event.preventDefault();
         if (formData.date && formData.time && formData.name && formData.phone && formData.guests) {
-            alert("Reservation made!");
+            alert("Booking made!");
             window.history.back();
             console.log(formData);
         }
@@ -57,9 +57,9 @@ function Booking() {
 
     return <>
         <Nav />
-        <reserve>
+        <div className="booking-info">
             <div>
-                <h2>Reserve a Table</h2>
+                <h2>Book a Table</h2>
                 <p>Monday to Friday: 10:00 AM - 10:00 PM</p>
             </div>
             <form onSubmit={handleSubmit}>
@@ -85,7 +85,7 @@ function Booking() {
 
                 <button className="button" type="submit">Reserve</button>
             </form>
-        </reserve>
+        </div>
         <Footer />
     </>
 }

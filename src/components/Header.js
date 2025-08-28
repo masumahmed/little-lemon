@@ -9,8 +9,7 @@ function Header() {
                 <h3>Chicago</h3>
                 <p>A cozy place for delicious Mediterranean food.</p>
                 <br />
-                {/* <input type="button" value="Reserve a Table" /> */}
-                <Link to="/reserve">Reserve a Table</Link>
+                <Link to="/booking">Book a Table</Link>
             </div>
             <div className="col2">
                 <img src={chef} alt="Little Lemon" />

@@ -28,7 +28,7 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/reserve" element={<Booking />} />
+                <Route path="/booking" element={<Booking />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/menu/:menuItem" element={<MenuItem cart={cart} addToCart={addToCart} />} />
             </Routes>

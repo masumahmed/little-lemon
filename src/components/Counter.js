@@ -43,13 +43,13 @@ export default function Counter({ count, setCount }) {
         <Container>
             <ButtonGroup>
                 <StyledButton
-                    onClick={() => setCount((prev) => prev - 1)}
+                    onClick={() => setCount(count - 1)}
                     disabled={count === 1}
                 >
                     <RemoveIcon fontSize="small" />
                 </StyledButton>
                 <StyledInput size="small" onChange={handleChange} value={count} />
-                <StyledButton onClick={() => setCount((prev) => prev + 1)}>
+                <StyledButton onClick={() => setCount(count + 1)}>
                     <AddIcon fontSize="small" />
                 </StyledButton>
             </ButtonGroup>

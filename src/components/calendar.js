@@ -10,10 +10,9 @@ export default function Calendar() {
 
     const [value, setValue] = React.useState(today);
 
-    // disable weekends (Sat = 6, Sun = 0)
     const disableWeekends = (date) => {
-        const day = date.day(); // dayjs: Sunday=0, Saturday=6
-        return day === 0 || day === 6;
+        const day = date.day();
+        return day === 0 || day === 6;         // dayjs: Sunday=0, Saturday=6
     };
 
     return (
