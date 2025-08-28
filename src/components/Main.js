@@ -1,8 +1,13 @@
 import menu from './menu.json';
+import { Link } from "react-router";
 
 function Pills({ text }) {
+    const handleEvent = () => {
+        alert(`feature not implemented`);
+    };
+
     return <>
-        <pill>{text}</pill>
+        <pill onClick={handleEvent} >{text}</pill>
     </>
 }
 
@@ -34,13 +39,15 @@ function Main() {
             </filter>
 
             {menu.map((item, index) => (<>
-                <MenuItem
-                    key={index}
-                    title={item.title}
-                    description={item.description}
-                    price={item.price}
-                    img={item.img}
-                />
+                <Link to={`/menu/${item.id}`} key={index}>
+                    <MenuItem
+                        key={index}
+                        title={item.title}
+                        description={item.description}
+                        price={item.price}
+                        img={item.img}
+                    />
+                </Link>
             </>))}
 
         </main>

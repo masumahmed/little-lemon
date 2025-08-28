@@ -1,35 +1,41 @@
 [
     {
+        "id": "greek-salad",
         "title": "Greek Salad",
         "description": "Crisp lettuce, tomatoes, cucumbers, red onions, olives, and feta cheese with a lemon-oregano vinaigrette.",
         "price": "$9.99",
         "img": "./assets/img/salad.jpg"
     },
     {
+        "id": "bruschetta",
         "title": "Bruschetta",
         "description": "Grilled bread topped with a garlic rub, fresh tomatoes, basil, and extra virgin olive oil.",
         "price": "$7.99",
         "img": "./assets/img/menu_items/Bruschetta.jpg"
     },
     {
+        "id": "pasta",
         "title": "Pasta",
         "description": "Spaghetti tossed with a rich tomato sauce and fresh basil.",
         "price": "$12.99",
         "img": "./assets/img/pasta.jpg"
     },
     {
+        "id": "grilled-fish",
         "title": "Grilled Fish",
         "description": "Fresh fish grilled to perfection with olive oil, garlic, and herbs, served with roasted vegetables.",
         "price": "$18.99",
         "img": "./assets/img/Grilled fish B.jpg"
     },
     {
+        "id": "mixed-grill",
         "title": "Mixed Grill",
         "description": "A hearty platter of grilled meats including lamb, chicken, and beef skewers.",
         "price": "$22.49",
         "img": "./assets/img/Grill.jpg"
     },
     {
+        "id": "lemon-dessert",
         "title": "Lemon Dessert",
         "description": "A light and refreshing lemon cake with cream and candied zest.",
         "price": "$6.99",

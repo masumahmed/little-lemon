@@ -1,10 +1,16 @@
+import Nav from './components/Nav';
+import Footer from './components/Footer';
+import menu from './components/menu.json';
+import { Link } from "react-router";
+
 function Cart() {
-    return (
-        <div>
+    return <>
+        <Nav />
+        <cart>
             <h2>Your Cart</h2>
-            <p>No items in cart</p>
-        </div>
-    );
+        </cart>
+        <Footer />
+    </>
 }
 
 export default Cart;

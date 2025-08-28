@@ -96,6 +96,11 @@ main {
             margin: 10px 5px;
         }
     }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
 }
 
 pill {
@@ -165,5 +170,81 @@ footer {
 
     p {
         margin: 0;
+    }
+}
+
+.button {
+    background-color: #F4CE15;
+    color: #4A5F57;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: bolder;
+    text-decoration: none;
+
+    &:hover {
+        filter: brightness(75%);
+        transition: 0.3s;
+    }
+}
+
+reserve {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+
+    .input {
+        border-radius: 5px;
+        display: flex;
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.css-5c1adp-MuiContainer-root {
+    padding: 0 !important;
+}
+
+.product-container {
+    img {
+        height: 300px;
+        width: 100%;
+        object-fit: cover;
+    }    
+    .product-details {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        min-height: calc(100vh - 64px - 70px - 20px - 300px);
+        
+        h2 {
+            margin: 10px 0;
+            font-size: 1.5rem;
+        }
+        
+        p {
+            margin: 10px 0;
+            font-size: 1rem;
+            color: #666666;
+        }
+        
+        b {
+            font-size: 1.2rem;
+            color: #333333;
+        }
+    }
+}
+
+cart {
+    display: flex;
+    flex-direction: column;
+
+    a {
+        text-decoration: none;
+        color: inherit;
     }
 }

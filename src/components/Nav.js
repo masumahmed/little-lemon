@@ -9,7 +9,9 @@ function Nav() {
     return <>
         <nav>
             <FontAwesomeIcon id="nav-icon" icon={faBars} />
-            <img src={logo} id="logo" alt="logo icon" />
+            <Link to="/">
+                <img src={logo} id="logo" alt="logo icon" />
+            </Link>
             <Link to="/cart">
                 <FontAwesomeIcon id="nav-icon" icon={faShoppingCart} />
             </Link>
